@@ -2,6 +2,9 @@ package LockTypes.Synchronized;
 
 public class SynchronizedExample {
 
+    // N number of incoming threads accquire lock on the same object level
+    // both tasks are synchronized hence only 1 can be executed at a time.
+
     public synchronized void longTask(String taskName) {
         System.out.println(taskName + " Accquired Lock.");
         try {

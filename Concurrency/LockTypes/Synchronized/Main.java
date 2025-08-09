@@ -6,6 +6,7 @@ import java.util.concurrent.Executors;
 public class Main {
     public static void main(String[] args) {
         SynchronizedExample example = new SynchronizedExample();
+        // SynchronizedExampleparallel example = new SynchronizedExampleparallel();
 
         ExecutorService executor = Executors.newFixedThreadPool(2);
 
