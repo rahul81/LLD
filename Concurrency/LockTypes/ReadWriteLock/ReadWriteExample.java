@@ -35,7 +35,10 @@ public class ReadWriteExample {
         try {
             System.out.println(taskName + " (read): Accquired read lock. Reading logValue: " + logValue);
             simulateWork();
+            Thread.sleep(2000); // While Reentrant read lock is accquired, write thread can't accquire write lock
             System.out.println(taskName + " (read): Finished reading.");
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
         } finally {
             System.out.println(taskName + " (read): Released read lock.");
             rwLock.readLock().unlock();
